@@ -1,0 +1,132 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpq0cwlgac0d2"]
+
+[ext_resource type="Script" path="res://Scenes/1.5_instructions.gd" id="1_bdvs3"]
+[ext_resource type="Texture2D" uid="uid://c2fhfglfihrik" path="res://Visuals/Other/menubackground.jpg" id="1_k4n10"]
+[ext_resource type="Texture2D" uid="uid://cwbpejebsolcn" path="res://Visuals/Other/instructionsbkgd.png.png" id="2_qrvrm"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_adba6"]
+texture = ExtResource("1_k4n10")
+modulate_color = Color(0.450648, 0.450648, 0.450648, 1)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ya0sp"]
+texture = ExtResource("2_qrvrm")
+modulate_color = Color(0.753984, 0.753984, 0.753984, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fyisw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xqfqh"]
+bg_color = Color(0.580392, 0.580392, 0.580392, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_acuvq"]
+bg_color = Color(0.223529, 0.223529, 0.223529, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5trfu"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+shadow_offset = Vector2(0, 3.41)
+
+[node name="1_5-instructions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bdvs3")
+
+[node name="Panel - background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -51.0
+offset_top = -170.0
+offset_right = 79.0
+offset_bottom = 11.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_adba6")
+
+[node name="Panel - instructions" type="Panel" parent="."]
+layout_mode = 0
+offset_left = 113.0
+offset_top = 34.0
+offset_right = 1052.0
+offset_bottom = 614.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_ya0sp")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 116.0
+offset_right = 1080.0
+offset_bottom = 529.0
+text = "Game : 
+Reimagine the 80s classic Frogger game as a magical fairytale adventure. Players will take on the role 
+of a cursed prince transformed into a frog by an evil wizard. To break the spell, the frog must navigate 
+through treacherous landscapes, dodge dangerous creatures, and race against time to reach the 
+princess atop the witches clock tower and kiss his beloved before midnight. 
+
+How to Play:
+The journey is filled with enchanted forests, perilous paths and rivers, terrifying trolls, andfire-breathing 
+dragons. Guided by his fairy godmother, with each level the stakes rise and as the clock strikes closer to 
+12am, the frog must rely on its quick reflexes and strategy to avoid obstacles and ensure love will prevail. 
+
+Controls: 
+\"W key\" or \"UP arrow\"  to move (forward) 
+\"A key\" or \"LEFT arrow\" to move (left)
+\"S key\" or \"DOWN arrow\" to move (down)
+\"D key\" or \"RIGHT arrow to move (right)"
+
+[node name="Button - return" type="Button" parent="."]
+layout_mode = 0
+offset_left = 699.0
+offset_top = 456.0
+offset_right = 890.0
+offset_bottom = 498.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyisw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xqfqh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_acuvq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5trfu")
+text = "Return"
+
+[node name="Button - forcopy" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 699.0
+offset_top = 456.0
+offset_right = 890.0
+offset_bottom = 498.0
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fyisw")
+theme_override_styles/hover = SubResource("StyleBoxFlat_xqfqh")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_acuvq")
+theme_override_styles/normal = SubResource("StyleBoxFlat_5trfu")
+text = "Return"
+
+[connection signal="pressed" from="Button - return" to="." method="_on_button__return_pressed"]

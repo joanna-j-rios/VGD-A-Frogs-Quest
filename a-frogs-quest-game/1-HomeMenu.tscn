@@ -135,8 +135,8 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxTexture_lfnbs")
 
-[connection signal="pressed" from="VBoxContainer/Button - start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button - start" to="." method="_on_button__start_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button - start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button - instructions" to="." method="_on_button__instructions_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button - instructions" to="." method="_on_settings_pressed"]
 [connection signal="pressed" from="VBoxContainer/Button- exit" to="." method="_on_button_exit_pressed"]
